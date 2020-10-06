@@ -68,7 +68,7 @@ public class CalculadoraSimple {
 				System.out.println(a / b);
 				break;
 			case 5: // Salir con despedida
-				System.out.println("Bye bye");
+				System.out.println("Adiós, guapo/a.");
 				break;
 			default: // Error
 				System.out.println("Opción no válida");
