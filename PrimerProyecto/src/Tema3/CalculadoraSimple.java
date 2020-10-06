@@ -7,8 +7,7 @@ public class CalculadoraSimple {
 	// Calculadora de 2 números que suma y resta
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int a = 0, b = 0;
-		int opcion = 0;
+		int a = 0, b = 0,opcion = 0;
 		
 		while (opcion != 5) {
 
