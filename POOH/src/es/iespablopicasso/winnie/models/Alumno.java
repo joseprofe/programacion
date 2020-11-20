@@ -1,35 +1,39 @@
 package es.iespablopicasso.winnie.models;
 
-public class Alumno {
-	//Atributos
-	private String nombre;
-	private String apellido;
-	private int edad;
-	private double estatura;
-	private Profesor profesor;
-	
-	//Constructores
-	public Alumno(String nombre, String apellido, int edad, double estatura, Profesor profesor) {
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.edad = edad;
-		this.estatura = estatura;
-		this.profesor = profesor;
+public class Alumno extends Persona {
+
+	private double nota;
+
+	// Constructores
+	public Alumno(String nombre, String apellido, int edad, double estatura, double nota) {
+		super(nombre, apellido, edad, estatura);
+		this.nota = nota;
+	}
+
+	public double getNota() {
+		return nota;
+	}
+
+	public void setNota(double nota) {
+		this.nota = nota;
+	}
+
+	// Métodos
+	public void saludar() {
+		System.out.println("Buenos días proezoh, soy " + getNombre());
+	}
+
+	public void despedirse() {
+		System.out.println("Me largo!");
 	}
 
 	@Override
 	public String toString() {
-		return "Alumno [nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", estatura=" + estatura
-				+ "]";
+		return "Alumno [nota=" + nota + ", toString()=" + super.toString() + "]";
 	}
-	
-	//Métodos
-	public void saludar() {
-		System.out.println("Buenos días proezoh, soy " + this.nombre);
+
+	@Override
+	public void comer() {
+		System.out.println("ÑAM ÑAM ÑAM");
 	}
-	
-	public void despedirse() {
-		System.out.println("Me largo!");
-	}
-	
 }

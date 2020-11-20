@@ -2,29 +2,20 @@ package es.iespablopicasso.winnie.models;
 
 import java.util.ArrayList;
 
-public class Profesor {
+public class Profesor extends Persona{
 
-	private String nombre;
-	private String apellido;
-	private int edad;
-	private double estatura;
 	private ArrayList<Alumno> alumnos;	
 
 	public Profesor(String nombre, String apellido, int edad, double estatura) {
-		super();
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.edad = edad;
-		this.estatura = estatura;
+		super(nombre, apellido, edad, estatura);
 		this.alumnos = new ArrayList<Alumno>();
 	}
-
+	
 	@Override
 	public String toString() {
-		return "Profesor [nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", estatura=" + estatura
-				+ "]";
+		return "Profesor [alumnos=" + alumnos + ", toString()=" + super.toString() + "]";
 	}
-	
+
 	public void anyadirAlumno(Alumno a) {
 		this.alumnos.add(a);
 	}
@@ -41,6 +32,11 @@ public class Profesor {
 	
 	public int getTotalAlumnos() {
 		return this.alumnos.size();
+	}
+
+	@Override
+	public void comer() {
+		System.out.println("Mmmm que rico...");
 	}
 
 }
