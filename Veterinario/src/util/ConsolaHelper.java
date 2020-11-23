@@ -150,13 +150,13 @@ public class ConsolaHelper {
 	
 	public static RazaPerro elegirRazaPerro() {
 		System.out.println("Seleccione una raza: ");
-		for (RazaPerro r :RazaPerro.values()) {
-			System.out.println(r.ordinal()+1+". "+r);
+		for (RazaPerro r : RazaPerro.values()) {
+			System.out.println(r.ordinal() + 1 + ". " + r);
 		}
 		int opc = ConsolaHelper.elegirOpcion(1, RazaPerro.values().length);
-		
-		RazaPerro raza = RazaPerro.values()[opc-1];
-		
+
+		RazaPerro raza = RazaPerro.values()[opc - 1];
+
 		return raza;
 	}
 	
