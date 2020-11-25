@@ -3,10 +3,11 @@ package es.iespablopicasso.winnie;
 import java.util.ArrayList;
 
 import es.iespablopicasso.winnie.models.Persona;
+import es.iespablopicasso.winnie.models.Punto;
 
 public class Programa {
 
-	public static void main(String[] args) {
+	public void main(String[] args) {
 
 		ArrayList<Persona> lista = new ArrayList<Persona>();
 
@@ -18,9 +19,16 @@ public class Programa {
 //			}
 //		}
 		
-		for (Persona persona : lista) {
-			persona.comer();
-		}
-
+//		Persona p = new Alumno(nombre, apellido, edad, estatura, nota);
+//		
+//		for (Persona persona : lista) {
+//			persona.comer();
+//		}
+		
+		Punto p = new Punto(1,2);
+		Punto p2 = new Punto(4,1);
+		
+		p.suma(p2);
+		p.dobla();
 	}
 }
