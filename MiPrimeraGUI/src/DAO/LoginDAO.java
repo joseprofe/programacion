@@ -21,18 +21,4 @@ public class LoginDAO extends AbstractDAO{
 		return false;
 
 	}
-
-	public void mostrarUsuarios() {
-
-		try {
-			Statement stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT * FROM usuarios");
-
-			while (rs.next()) {
-				System.out.println(rs.getString("Username") + "\t" + rs.getString("Password"));
-			}
-		} catch (SQLException ex) {
-			System.out.println(ex.getMessage());
-		}
-	}
 }

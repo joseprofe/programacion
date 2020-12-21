@@ -14,6 +14,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.Font;
+import java.awt.Color;
 
 public class LoginView {
 
@@ -25,6 +26,7 @@ public class LoginView {
 	private JLabel lblPassword;
 	private JLabel lblBienvenido;
 	private LoginDAO loginDAO;
+	private JLabel lblRegistro;
 
 	/**
 	 * Create the application.
@@ -77,6 +79,13 @@ public class LoginView {
 		lblBienvenido.setFont(new Font("Lucida Grande", Font.BOLD, 22));
 		lblBienvenido.setBounds(159, 37, 220, 52);
 		frame.getContentPane().add(lblBienvenido);
+		
+		lblRegistro = new JLabel("¿No estás registrado aún? Pulsa aquí para registrarte");
+		lblRegistro.setForeground(Color.BLUE);
+
+		lblRegistro.setFont(new Font("Lucida Grande", Font.BOLD, 13));
+		lblRegistro.setBounds(47, 232, 364, 29);
+		frame.getContentPane().add(lblRegistro);
 	}
 	
 	private void setListeners() {
@@ -99,6 +108,15 @@ public class LoginView {
 		
 		passwordField.addKeyListener(comportamientoLogin);		
 		tfUsername.addKeyListener(comportamientoLogin);
+		
+		//REGISTRO
+		lblRegistro.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				new RegistroView(frame);
+				frame.setVisible(false);
+			}
+		});
 	}
 	
 	private void loginPressed() {

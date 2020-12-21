@@ -10,7 +10,7 @@ public abstract class AbstractDAO {
 	
 	public AbstractDAO() {
 		try {
-			this.conn = DriverManager.getConnection("jdbc:mysql://localhost/PolloFrito", "pollofrito",
+			this.conn = DriverManager.getConnection("jdbc:mysql://localhost/poke", "pollofrito",
 					"P@ssw0rd");
 		} catch (SQLException e) {
 			e.printStackTrace();
