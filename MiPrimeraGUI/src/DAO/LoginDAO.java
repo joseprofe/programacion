@@ -8,7 +8,8 @@ public class LoginDAO extends AbstractDAO{
 
 		try {
 			Statement stmt = conn.createStatement();
-			String sql = "SELECT * FROM usuarios " + "WHERE username = '" + username + "'" + " AND password = '"
+			String sql = "SELECT * FROM usuarios " + "WHERE username = '" + username + "'"
+					+ " AND password = '"
 					+ password + "'";
 			ResultSet rs = stmt.executeQuery(sql);
 
