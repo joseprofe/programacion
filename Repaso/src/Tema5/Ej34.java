@@ -31,10 +31,21 @@ public class Ej34 {
 //		System.out.println(n1.substring(2));
 //		System.out.println(par + n1.charAt(0));
 
-		for (int i = 0; i < n1.length(); i++) {
+		int longMax = 0;
+		if(n1.length() > n2.length()) {
+			longMax = n1.length();
+		} else {
+			longMax = n2.length();
+		}
+		
+		int digitoden1 = 0;
+		int digitoden2 = 0;
+		for (int i = 0; i < longMax; i++) {
 			// Pasar de char a int, restamos 48 porque es el comienzo de números en ASCII
-			int digitoden1 = n1.charAt(i) - 48;
-			int digitoden2 = n2.charAt(i) - 48;
+			if(i < n1.length())
+				digitoden1 = n1.charAt(i) - 48;
+			if(i < n2.length())
+				digitoden2 = n2.charAt(i) - 48;
 
 			if (esPar(digitoden1)) {
 				par += digitoden1;
