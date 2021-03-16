@@ -18,7 +18,7 @@ public class SetsMapas {
 		map.remove(2);
 		map.values().forEach(System.out::println);
 		
-		System.out.println(map);
+		System.out.println(map.values());
 		
 	}
 
