@@ -17,6 +17,8 @@ public class POOMain {
 		System.out.println(pikachu);
 		System.out.println(pikachu.estaVivo());
 		
+
+		
 	}
 
 }
