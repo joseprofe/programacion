@@ -1,5 +1,8 @@
 package POO.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Pokemon {
 	// ATRIBUTOS o PROPIEDADES
 	private int numero;
@@ -7,6 +10,7 @@ public class Pokemon {
 	private int nivel; // 1-100
 	private int maxHP;
 	private int actualHP;
+	private List<Movimiento> listaMov;
 
 	// CONSTRUCTORES
 	public Pokemon(int numero, String nombre) {
@@ -15,6 +19,7 @@ public class Pokemon {
 		this.nivel = 5;
 		this.maxHP = 20;
 		this.actualHP = this.maxHP;
+		this.listaMov = new ArrayList<Movimiento>();
 	}
 
 	public Pokemon(int numero, String nombre, int nivel, int maxHP) {
@@ -23,10 +28,21 @@ public class Pokemon {
 		this.nivel = nivel;
 		this.maxHP = maxHP;
 		this.actualHP = this.maxHP;
+		this.listaMov = new ArrayList<Movimiento>();
 	}
 
 	// MÉTODOS
 
+	public void aprenderMovimiento(Movimiento mov) {
+		this.listaMov.add(mov);
+	}
+	
+	public void verMovimientos() {
+		for(Movimiento mov : listaMov) {
+			System.out.println(mov);
+		}
+	}
+	
 	public void darCarameloRaro() {
 		this.nivel++;
 		this.maxHP += 6;
@@ -63,8 +79,7 @@ public class Pokemon {
 
 	@Override
 	public String toString() {
-		return "Pokemon [numero=" + numero + ", nombre=" + nombre + ", nivel=" + nivel + ", Vida=" + this.getVida()
-				+ "]";
+		return nombre + " | Lvl=" + nivel + " | Vida=" + this.getVida();
 	}
 
 }
