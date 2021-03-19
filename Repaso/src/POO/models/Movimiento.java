@@ -21,6 +21,10 @@ public class Movimiento {
 		return this.danyo;
 	}
 
+	public void restaurarPP() {
+		this.actualPP = this.maxPP;
+	}
+
 	@Override
 	public String toString() {
 		return "\t+" + nombre + " \t- [" + actualPP + "/" + maxPP + "]";
