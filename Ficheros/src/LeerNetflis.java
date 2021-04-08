@@ -8,6 +8,7 @@ public class LeerNetflis {
 
 		final String ruta = "assets/netflix_titles.csv";
 		File f = new File(ruta);
+		boolean isString = false;
 		Scanner sc = null;
 		try {
 			sc = new Scanner(f);
@@ -16,8 +17,25 @@ public class LeerNetflis {
 			while (sc.hasNextLine()) {
 				var cadena = sc.nextLine();
 				var cadenitas = cadena.split(",");
+				String stringConComillas = "";
 				for (String s : cadenitas) {
-					System.out.println(s.trim());
+					//Para escapar cadenas completas de caracteres
+					if(s.startsWith("\"")) {
+						isString = true;
+					}
+					if(isString) {
+						stringConComillas += s + ",";
+					}
+					if(s.endsWith("\"")) {
+						isString = false;		
+						s = stringConComillas;
+						stringConComillas = "";
+					}	
+					
+					//Imprimir el término entre las comas.
+					if(!isString) {
+						System.out.println(s.trim());
+					}
 				}
 				System.out.println("---");
 			}
