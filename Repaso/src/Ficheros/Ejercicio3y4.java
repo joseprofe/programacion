@@ -16,7 +16,7 @@ public class Ejercicio3y4 {
 
 	public static void escribirEnFichero(String[] cadenas, String filename) {
 		try {
-			FileWriter fw = new FileWriter(filename);
+			FileWriter fw = new FileWriter(filename,true);
 			
 			for (int i = 0; i < cadenas.length; i++) {
 				fw.write(cadenas[i]+"*");
