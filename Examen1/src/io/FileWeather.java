@@ -43,27 +43,30 @@ public class FileWeather {
 		return this.weathers;
 
 	}
-	
+
+	/**
+	 * Esta función escribe en un fichero un arraylist de weathers.
+	 * @param weathers
+	 */
 	public void escribir(ArrayList<Weather> weathers) {
 		filename = "c.csv";
 		try {
 			FileWriter fw = new FileWriter(filename);
-			
+
 			Date date = new Date();
 			LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 			int month = localDate.getMonthValue();
-			
-			for (int i = 0 ; i < month ; i++) {
+
+			for (int i = 0; i < month; i++) {
 				Weather w = weathers.get(i);
-				fw.write(w.getMes()+";"+w.gettMax()+";"+w.gettMin()+";"+w.getnLluvias()+"\n");
+				fw.write(w.getMes() + ";" + w.gettMax() + ";" + w.gettMin() + ";" + w.getnLluvias() + "\n");
 			}
-			
+
 			fw.flush();
 			fw.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 
 	}
 }

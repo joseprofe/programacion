@@ -8,6 +8,7 @@ import models.Weather;
 public class MainApp {
 
 	public static void main(String[] args) {
+		//Declaración de variables.
 		FileWeather io = new FileWeather();
 		ArrayList<Weather> weathers = io.leer();
 		int tMax = Integer.MIN_VALUE;
@@ -16,6 +17,7 @@ public class MainApp {
 		int totalMax = 0, totalMin = 0;
 		String mesesMin = "", mesesMax = "";
 		
+		//Cálculo de medias y temperaturas.
 		for (Weather w : weathers) {
 			if(w.gettMin() < tMin)
 				tMin = w.gettMin();
@@ -28,9 +30,7 @@ public class MainApp {
 			totalMin += w.gettMin();			
 		}
 		
-		System.out.println("La media máxima = " + totalMax/12);
-		System.out.println("La media mínima = " + totalMin/12);
-		
+		//Cálculo de nombre de los meses.
 		for (Weather w : weathers) {
 			if(w.gettMin() == tMin) {
 				mesesMin += w.getMes() + " ";
@@ -40,12 +40,16 @@ public class MainApp {
 			}
 		}
 		
+		//Salida del programa
+		System.out.println("La media máxima = " + totalMax/12);
+		System.out.println("La media mínima = " + totalMin/12);
 		System.out.println("Meses de temp. mín = " + mesesMin);
 		System.out.println("Meses de temp. máx = " + mesesMax);
 		System.out.println("Media del año = " + (totalMax/12 + totalMin/12)/2);
 		
 		
 		/////////////
+		//Escritura del fichero.
 		
 		ArrayList<Weather> tiempos = new ArrayList<Weather>();
 		tiempos.add(new Weather("Enero",10,-2,6));
