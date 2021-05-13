@@ -1,0 +1,4 @@
+jose:guapo
+david:guapo
+GANDALF:1234
+saruman:feo
