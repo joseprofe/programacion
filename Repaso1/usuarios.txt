@@ -2,3 +2,5 @@ jose:guapo
 david:guapo
 GANDALF:1234
 saruman:feo
+aragorn:1234
+chete:chete

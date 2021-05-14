@@ -12,6 +12,7 @@ import models.Usuario;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
 import java.awt.event.ActionEvent;
 
 public class LoginView {
@@ -76,6 +77,13 @@ public class LoginView {
 					Usuario u = new Usuario(username, password);
 					if(FicheroUsuarios.login(u)) {
 						JOptionPane.showMessageDialog(btnLogin, "Éxito");
+						try {
+							new WelcomeView();
+						} catch (FileNotFoundException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+						frmLogin.dispose();
 					}
 					else {
 						JOptionPane.showMessageDialog(btnLogin, "Credenciales erróneas");
